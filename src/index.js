@@ -9,6 +9,7 @@ import {
 import Layout from './Layout';
 import Home from "./components/Home/Home"
 import About from './components/About/About';
+import NoteState from './context/notes/NoteState';
 
 const router = createBrowserRouter([
   {
@@ -17,11 +18,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
         path: "/about",
-        element: <About/>
+        element: <About />
       }
     ]
   },
@@ -29,8 +30,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>
+  <NoteState>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </NoteState>
 );
 reportWebVitals();
