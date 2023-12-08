@@ -64,21 +64,24 @@ function Navbar() {
             <nav>
                 <div className="px-10 py-2 bg-[#000] text-[#fff]">
                     <div className='flex justify-between items-center'>
-                        <div className='h-[70px]'>
-                            <img className='h-full' src={Logo} alt="" />
-                        </div>
 
-                        <div>
-                            <ul className='flex gap-x-5'>
-                                <li>
-                                    <NavLink className={({ isActive }) =>
-                                        `${isActive ? "text-[#fff]" : "text-[#7D7C7C]"}`} to="/">Home</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({ isActive }) =>
-                                        `${isActive ? "text-[#fff]" : "text-[#7D7C7C]"}`} to="/about">About</NavLink>
-                                </li>
-                            </ul>
+                        <div className='flex items-center gap-x-16'>
+                            <div className='h-[70px]'>
+                                <img className='h-full' src={Logo} alt="" />
+                            </div>
+
+                            <div>
+                                <ul className='flex gap-x-5'>
+                                    <li>
+                                        <NavLink className={({ isActive }) =>
+                                            `${isActive ? "text-[#fff]" : "text-[#7D7C7C]"}`} to="/">Home</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink className={({ isActive }) =>
+                                            `${isActive ? "text-[#fff]" : "text-[#7D7C7C]"}`} to="/about">About</NavLink>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div className='w-56 flex justify-end'>
