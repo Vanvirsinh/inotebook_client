@@ -64,12 +64,10 @@ function Navbar() {
             <nav>
                 <div className="px-10 py-2 bg-[#000] text-[#fff]">
                     <div className='flex justify-between items-center'>
-
                         <div className='flex items-center gap-x-16'>
                             <div className='h-[70px]'>
                                 <img className='h-full' src={Logo} alt="" />
                             </div>
-
                             <div>
                                 <ul className='flex gap-x-5'>
                                     <li>
@@ -83,7 +81,6 @@ function Navbar() {
                                 </ul>
                             </div>
                         </div>
-
                         <div className='w-56 flex justify-end'>
                             {userLoading ? (
                                 <div className='flex justify-center items-center'>
