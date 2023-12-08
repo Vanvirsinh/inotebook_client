@@ -10,6 +10,7 @@ import Layout from './Layout';
 import Home from "./components/Home/Home"
 import About from './components/About/About';
 import NoteState from './context/notes/NoteState';
+import AuthState from './context/auth/AuthState';
 
 const router = createBrowserRouter([
   {
@@ -30,10 +31,12 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <NoteState>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </NoteState>
+  <AuthState>
+    <NoteState>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </NoteState>
+  </AuthState>
 );
 reportWebVitals();
