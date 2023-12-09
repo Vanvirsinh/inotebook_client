@@ -25,6 +25,7 @@ const NoteState = (props) => {
                             "Content-Type": "application/json",
                             "auth-token": token
                         },
+                        referrerPolicy: "unsafe_url" 
                     }
                 )
                 const jsonData = await response.json();
@@ -62,7 +63,8 @@ const NoteState = (props) => {
                             "Content-Type": "application/json",
                             "auth-token": token
                         },
-                        body: JSON.stringify({ title, description, tags })
+                        body: JSON.stringify({ title, description, tags }),
+                        referrerPolicy: "unsafe_url" 
                     }
                 )
 
@@ -103,7 +105,8 @@ const NoteState = (props) => {
                             "Content-Type": "application/json",
                             "auth-token": token
                         },
-                        body: JSON.stringify({ title: etitle, description: edescription, tags: etags })
+                        body: JSON.stringify({ title: etitle, description: edescription, tags: etags }),
+                        referrerPolicy: "unsafe_url" 
                     }
                 )
 
@@ -150,6 +153,7 @@ const NoteState = (props) => {
                             "Content-Type": "application/json",
                             "auth-token": token
                         },
+                        referrerPolicy: "unsafe_url" 
                     }
                 )
 
