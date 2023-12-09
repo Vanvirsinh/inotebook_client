@@ -10,8 +10,8 @@ function Notes() {
   const { notes, getAllNotes, editNote, error, loading, deleteNote } = context;
 
   useEffect(() => {
-    // eslint-disable-next-line
     getAllNotes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [open, setOpen] = useState(false);
@@ -47,14 +47,14 @@ function Notes() {
         ) :
           error ? (
             <div className="container mt-10">
-              <h1 className='text-center text-2xl'>{error.errors}</h1>
+              <h1 className='text-center text-xl'>{error.errors}</h1>
             </div>
           ) : notes.length === 0 ? (
             <div className="container mt-10">
-              <h1 className='text-center text-2xl'>" No notes to display 🤨🤨🤨"</h1>
+              <h1 className='text-center text-xl'>" No notes to display 🤨🤨🤨"</h1>
             </div>
           ) : (
-            <div className='grid grid-cols-3 gap-5 mt-8'>
+            <div className='grid grid-cols-1 gap-5 mt-8 md:grid-cols-3 sm:grid-cols-2'>
               {notes.slice().reverse().map((note) => {
                 return <NoteItem note={note} key={note._id} handleClickOpen={handleClickOpen} handleDeleteOpen={handleDeleteOpen} />
               })}

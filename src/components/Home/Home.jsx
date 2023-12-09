@@ -5,7 +5,7 @@ function Home() {
   
   return (
     <div>
-      <div className="container p-20">
+      <div className="container md:p-20 p-5">
         <div className='flex flex-col gap-y-20'>
         <div>
           <h1 className='text-3xl font-bold'>Add your notes:</h1>

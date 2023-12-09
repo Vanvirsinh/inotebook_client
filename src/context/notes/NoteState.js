@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 const NoteState = (props) => {
 
-    const host = "http://localhost:5000";
+    const host = "http://31.220.52.230:5000";
 
     const context = useContext(AuthContext);
     const { checkAuth } = context;

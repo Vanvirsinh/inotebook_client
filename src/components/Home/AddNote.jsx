@@ -20,10 +20,12 @@ function AddNote() {
         setLoading(true);
         addNote(note, (response) => {
             setLoading(false);
-            setFormData({ title: '', description: '', tags: '' });
-            setNote({ title: "", description: "", tags: "General" });
             setIsFormValidated(false);
             setAlert(response);
+            if(response.type === "success") {
+                setFormData({ title: '', description: '', tags: '' });
+                setNote({ title: "", description: "", tags: "General" });
+            }
             setTimeout(() => {
                 setAlert(null);
             }, 5000);
