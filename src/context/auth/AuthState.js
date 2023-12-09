@@ -29,8 +29,7 @@ const AuthState = (props) => {
                         method: "GET",
                         headers: {
                             "auth-token": token
-                        },
-                        referrerPolicy: "unsafe_url" 
+                        }
                     })
                 if (response.status === 200) {
                     const user = await response.json();
@@ -64,8 +63,7 @@ const AuthState = (props) => {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ name, email, password }),
-                    referrerPolicy: "unsafe_url" 
+                    body: JSON.stringify({ name, email, password })
                 }
             )
 
@@ -109,8 +107,7 @@ const AuthState = (props) => {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ email, password }),
-                    referrerPolicy: "unsafe_url" 
+                    body: JSON.stringify({ email, password })
                 }
             )
 
