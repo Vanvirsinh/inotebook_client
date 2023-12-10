@@ -2,7 +2,7 @@ import AuthContext from "./authContext";
 import { useState } from "react";
 import Cookies from 'js-cookie';
 
-const host = "http://31.220.52.230:5000";
+const host = "https://inotebook.online";
 
 const AuthState = (props) => {
 
