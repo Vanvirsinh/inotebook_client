@@ -4,6 +4,7 @@ import NoteContext from '../../context/notes/noteContext.js';
 import UpdateNote from './UpdateNote.jsx';
 import DeleteNote from './DeleteNote.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
+import Masonry from '@mui/lab/Masonry';
 
 function Notes() {
   const context = useContext(NoteContext);
@@ -27,7 +28,7 @@ function Notes() {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   const handleDeleteOpen = (id) => {
     setDeleteOpen(true);
     setDeleteId(id);
@@ -54,17 +55,20 @@ function Notes() {
               <h1 className='text-center text-xl'>" No notes to display 🤨🤨🤨"</h1>
             </div>
           ) : (
-            <div className='grid grid-cols-1 gap-5 mt-8 md:grid-cols-3 sm:grid-cols-2'>
-              {notes.slice().reverse().map((note) => {
-                return <NoteItem note={note} key={note._id} handleClickOpen={handleClickOpen} handleDeleteOpen={handleDeleteOpen} />
-              })}
+            <div className='mt-8'>
+              <Masonry columns={{xs: 1, sm: 2, md: 3}}
+                spacing={2}>
+                {notes.slice().reverse().map((note) => {
+                  return <NoteItem note={note} key={note._id} handleClickOpen={handleClickOpen} handleDeleteOpen={handleDeleteOpen} />
+                })}
+              </Masonry>
             </div>
           )
 
         }
       </div>
       <UpdateNote handleClose={handleClose} open={open} note={note} setNote={setNote} editNote={editNote} />
-      <DeleteNote handleClose={handleDeleteClose} open={deleteOpen} deleteNote={deleteNote} deleteId={deleteId}/>
+      <DeleteNote handleClose={handleDeleteClose} open={deleteOpen} deleteNote={deleteNote} deleteId={deleteId} />
     </>
   )
 }

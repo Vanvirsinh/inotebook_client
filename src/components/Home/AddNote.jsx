@@ -70,7 +70,11 @@ function AddNote() {
             {
                 alert ? (
                     <div style={alertStyle}>
-                        <AlertBox message={alert.message} type={alert.type} />
+                        {
+                            alert.message.map((err, index) => {
+                                return <AlertBox key={index} message={err.msg} type={alert.type} />
+                            })
+                        }
                     </div>
                 ) : (
                     <div></div>

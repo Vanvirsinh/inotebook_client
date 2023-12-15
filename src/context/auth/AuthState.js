@@ -85,7 +85,6 @@ const AuthState = (props) => {
                     type: "error",
                     message: error.errors
                 });
-                console.log(error);
             }
 
         } catch {
@@ -136,7 +135,7 @@ const AuthState = (props) => {
             setIsAuthenticated(false);
             cb({
                 type: "error",
-                message: "Oops, Some Internal Error Occurred!"
+                message: [{ msg: "Oops, Some Internal Error Occurred!" }]
             });
         }
     }

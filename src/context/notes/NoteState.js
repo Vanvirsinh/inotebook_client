@@ -66,19 +66,29 @@ const NoteState = (props) => {
                     }
                 )
 
-                const jsonData = await response.json();
-                setNotes(notes.concat(jsonData));
-                setLoading(false);
-                callback({
-                    type: "success",
-                    message: "Note added successfully!"
-                });
+                if (response.status === 201) {
+                    const jsonData = await response.json();
+                    setNotes(notes.concat(jsonData));
+                    setLoading(false);
+                    callback({
+                        type: "success",
+                        message: [{ msg: "Note added successfully!" }]
+                    });
+                } else {
+                    const error = await response.json();
+                    setError(error.errors);
+                    setLoading(false);
+                    callback({
+                        type: "error",
+                        message: error.errors
+                    });
+                }
             } catch {
                 setError({ errors: "Oops, Some Internal Error Occurred!" });
                 setLoading(false);
                 callback({
                     type: "error",
-                    message: "Oops, Some Internal Error Occurred!"
+                    message: [{ msg: "Oops, Some Internal Error Occurred!" }]
                 });
             }
         } else {
